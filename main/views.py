@@ -37,7 +37,7 @@ class User(APIView):
         login_user = request.user
 
         friend_list = CustomUser.objects.filter(username__in = data['data'])
-        login_user_friend = login_user.friend_list.all()
+        login_user_friend = login_user.friend_list.all()    
 
         for i in friend_list :
             if(i not in login_user_friend) :

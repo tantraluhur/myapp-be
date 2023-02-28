@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class CustomUser(AbstractUser) :
-    friend_list = models.ManyToManyField("self", blank=True)
+    friend_list = models.ManyToManyField("self", symmetrical=False, blank=True)
 
 class Content(models.Model) :
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
